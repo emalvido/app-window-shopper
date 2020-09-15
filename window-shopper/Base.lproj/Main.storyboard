@@ -26,29 +26,44 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bgd-yz-GVU" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
-                                <rect key="frame" x="57" y="145" width="300" height="34"/>
+                                <rect key="frame" x="20" y="145" width="374" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="i3K-iF-NUb"/>
-                                    <constraint firstAttribute="width" constant="300" id="mGl-ma-uzy"/>
+                                    <constraint firstAttribute="height" constant="45" id="i3K-iF-NUb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gS4-eY-fFw" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="215" width="374" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Vmq-AI-One"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bgd-yz-GVU" secondAttribute="trailing" constant="20" id="47P-rB-DRS"/>
                             <constraint firstItem="zer-ww-RwN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="482-qX-7c7"/>
-                            <constraint firstItem="Bgd-yz-GVU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FAs-7s-gPR"/>
+                            <constraint firstItem="gS4-eY-fFw" firstAttribute="height" secondItem="Bgd-yz-GVU" secondAttribute="height" id="FmS-5e-bb7"/>
                             <constraint firstItem="Bgd-yz-GVU" firstAttribute="top" secondItem="zer-ww-RwN" secondAttribute="bottom" constant="50" id="NRU-15-tIB"/>
-                            <constraint firstItem="Bgd-yz-GVU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T21-J1-gOf"/>
+                            <constraint firstItem="gS4-eY-fFw" firstAttribute="leading" secondItem="Bgd-yz-GVU" secondAttribute="leading" id="XQT-A8-0NS"/>
+                            <constraint firstItem="Bgd-yz-GVU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cKQ-lR-Mbs"/>
                             <constraint firstItem="XOU-hV-npp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dYx-dC-H7z"/>
                             <constraint firstItem="zer-ww-RwN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gqZ-Et-Odt"/>
+                            <constraint firstItem="gS4-eY-fFw" firstAttribute="top" secondItem="Bgd-yz-GVU" secondAttribute="bottom" constant="25" id="jvs-mP-dN8"/>
                             <constraint firstItem="XOU-hV-npp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k2Y-ex-tal"/>
                             <constraint firstItem="XOU-hV-npp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kcm-Du-YEh"/>
+                            <constraint firstItem="gS4-eY-fFw" firstAttribute="trailing" secondItem="Bgd-yz-GVU" secondAttribute="trailing" id="mn7-1j-0TZ"/>
                             <constraint firstItem="XOU-hV-npp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xd2-sp-6tK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="priceTxt" destination="gS4-eY-fFw" id="Km6-eh-blj"/>
+                        <outlet property="wageTx" destination="Bgd-yz-GVU" id="tbg-qx-DE8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
