@@ -12,6 +12,8 @@ class MainVC: UIViewController {
 
     @IBOutlet weak var wageTx: CurrencyTxtField!
     @IBOutlet weak var priceTxt: CurrencyTxtField!
+    @IBOutlet weak var resultLbl: UILabel!
+    @IBOutlet weak var hoursLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +26,26 @@ class MainVC: UIViewController {
         
         wageTx.inputAccessoryView = calcBtn
         priceTxt.inputAccessoryView = calcBtn
+        
+        resultLbl.isHidden = true
+        hoursLbl.isHidden = true
     }
     
     @objc func calculate() {
-        print("we got here")
+        if let wgTxt = wageTx.text, let priceTxt = priceTxt.text {
+            if let wage = Double(wgTxt), let price = Double(priceTxt) {
+                view.endEditing(true) // To force keyboard to disappear
+                resultLbl.isHidden = false
+                hoursLbl.isHidden = false
+                resultLbl.text = "\(Wage.getHours(forWage: wage, andPrice: price))"
+            }
+        }
     }
     
+    @IBAction func clearBtnPressed(_ sender: Any) {
+        wageTx.text = ""
+        priceTxt.text = ""
+        resultLbl.isHidden = true
+        hoursLbl.isHidden = true
+    }
 }
